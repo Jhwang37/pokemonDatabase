@@ -10,7 +10,7 @@ public class Trainer {
 
     private String name;
 
-    @OneToMany(mappedBy = "trainer", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    @OneToMany(mappedBy = "trainer", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     private Set<Pokemon> pokemons;
 
     public long getId() {

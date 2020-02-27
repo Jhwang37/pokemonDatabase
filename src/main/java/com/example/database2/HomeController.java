@@ -65,6 +65,7 @@ public class HomeController {
     }
     @RequestMapping("/update/{id}")
     public String updatePokemon(@PathVariable("id") long id, Model model){
+        model.addAttribute("trainers", trainerRepo.findAll());
         model.addAttribute("pokemon", pokemonRepo.findById(id).get());
         return "pokemonform";
     }
